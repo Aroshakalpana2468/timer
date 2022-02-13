@@ -41,6 +41,7 @@ async def start(client, message):
     text = START_TEXT
     reply_markup = InlineKeyboardMarkup(TELETIPS_MAIN_MENU_BUTTONS)
     await message.reply_sticker("  CAACAgUAAxkBAAEGXuhiB2ebnfsYb7g53quwI5ltRjwpgAACxQMAAqC3-VX9k95mFsQW_x4E ")
+    await message.reply_sticker("  CAACAgIAAxkBAAEGX0liCKUzNU4bZ2EVmCK5pdM7gsWFkwACSg8AAmCm0EndM-7edjWcqx4E ")
     await message.reply(
         text=text,
         reply_markup=reply_markup,
