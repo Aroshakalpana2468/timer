@@ -1,7 +1,7 @@
 from telegram.ext import Updater
 import requests
 
-BOT_Token="7853451df5:SDSGHghjgjdsfgtyY0PXugoowhNL03vyI7w"
+BOT_Token="5215109952:AAEZ97Ossnbe_AQ_3F3N5M-9rlJA69BZfbc"
 updater = Updater(BOT_Token)
 
 def incoming_message_action(update, context):
