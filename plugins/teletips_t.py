@@ -29,6 +29,12 @@ HELP_TEXT = """
 
 > You can send <code>/stopc</code> to stop all countdowns. 
 
+<u>**logo**</u> - **Commands** ( /logo name )�
+
+**Example**:
+<code>/logo "buddy"</code>
+
+
 That's all! 🥳
 
 **⚠️WARNING:**
