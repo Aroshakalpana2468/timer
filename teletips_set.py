@@ -122,20 +122,34 @@ async def callback_query(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass    
 
-@bot.on_message(filters.command(["logo"]))
-async def logo(_, m : Message):
-    if len(m.command) <2:
-        return await m.reply_text("Please provide a name")
-    else: 
-        try:
-            hee = await m.reply("making your logo...")
-            name = m.text.split(None, 1)[1]
-            req = requests.get(f"https://api.single-developers.software/logo?name={name}")
-            IMG = req.text
-            await hee.delete()
-            await m.reply_photo(IMG) 
-        except Exception as e:
-            await m.reply_text(f"Error: {e}")
+@bot.on_message(filters.command("logo"))
+async def make_logo(_, message):
+    imgcaption = f"""
+☘️** Logo Created Successfully**
+◇───────────────◇
+🔥 **Created by** : @THA_MISS_LARA_BOT
+🌷 **Requestor** : {message.from_user.mention}
+⚡️ **Powered By **  : SNT™ 🇱🇰
+◇───────────────◇
+"""
+    if len(message.command) < 2:
+            return await message.reply_text("Please give a text to make logo 📸")
+    m = await message.reply_text("📸 Creating..")
+    text = message.text.split(None, 1)[1]
+    photo = get(f"https://api.single-developers.software/logo?name={text}").history[1].url
+    await m.edit("📤 Uploading ...")
+    await bot.send_photo(message.chat.id, photo=photo, caption=imgcaption.format(message.from_user.mention),
+                 reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "••Telegraph Link••", url=f"{photo}"
+                    )
+                ]
+            ]
+          ),
+    )
+    await m.delete()
           
           
 @bot.on_message(filters.command('set'))
