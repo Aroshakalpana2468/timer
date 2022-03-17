@@ -130,7 +130,7 @@ async def logo(_, m : Message):
         try:
             hee = await m.reply("making your logo...")
             name = m.text.split(None, 1)[1]
-            req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}")
+            req = requests.get(f"https://api.single-developers.software/logo?name={name}")
             IMG = req.text
             await hee.delete()
             await m.reply_photo(IMG) 
