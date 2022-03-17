@@ -127,9 +127,9 @@ async def make_logo(_, message):
     imgcaption = f"""
 ☘️** Logo Created Successfully**
 ◇───────────────◇
-🔥 **Created by** : @THA_MISS_LARA_BOT
+🔥 **Created by** : @TIMER_123_bot
 🌷 **Requestor** : {message.from_user.mention}
-⚡️ **Powered By **  : SNT™ 🇱🇰
+⚡️ **Powered By **  : AROSHA 🇱🇰
 ◇───────────────◇
 """
     if len(message.command) < 2:
@@ -149,6 +149,56 @@ async def make_logo(_, message):
             ]
           ),
     )
+    await m.delete()
+            
+            
+@bot.on_message(filters.command("write"))
+async def make_logo(_, message):
+    imgcaption = f"""
+☘️**write Successfully**
+◇───────────────◇
+🔥 **Created by** :  @TIMER_123_bot
+🌷 **Requestor** : {message.from_user.mention}
+⚡️ **Powered By **  : AROSHA 🇱🇰
+◇───────────────◇
+"""
+    if len(message.command) < 2:
+            return await message.reply_text("Please give a text to write ✍️")
+    m = await message.reply_text("✍️ writeing ..")
+    text = message.text.split(None, 1)[1]
+    photo = get(f"https://api.single-developers.software?write={text}").history[1].url
+    await m.edit("📤 Uploading ...")
+    await bot.send_photo(message.chat.id, photo=photo, caption=imgcaption.format(message.from_user.mention),
+                 reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "••Telegraph Link••", url=f"{photo}"
+                    )
+                ]
+            ]
+          ),
+    )
+    await m.delete()
+
+@bot.on_message(filters.command("glogo"))
+async def make_logo(_, message):
+    imgcaption = f"""
+☘️** Logo Created Successfully**
+◇───────────────◇
+🔥 **Created by** : @TIMER_123_bot
+🌷 **Requestor** : {message.from_user.mention}
+⚡️ **Powered By **  : AROSHA 🇱🇰
+◇───────────────◇
+"""
+    if len(message.command) < 2:
+            return await message.reply_text("Please provide a name... 📸")
+    m = await message.reply_text("📸 making your logo...")
+    text = message.text.split(None, 1)[1]
+    req = requests.get(f"https://sd-logo-api.herokuapp.com/?logo={name}")
+    IMG = req.text
+    await m.edit("📤 Uploading ...")
+    await bot.send_photo(message.chat.id, photo=IMG, caption=imgcaption.format(message.from_user.mention)),
     await m.delete()
           
           
