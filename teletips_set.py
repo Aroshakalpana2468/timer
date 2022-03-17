@@ -31,7 +31,7 @@ TELETIPS_MAIN_MENU_BUTTONS = [
             ],
             [
                 InlineKeyboardButton('👥 GROUP', callback_data="GROUP_CALLBACK"),
-                InlineKeyboardButton('📣 CHANNEL', url='https://t.me/pc1games12'),
+                InlineKeyboardButton('📣 CHANNEL', url='https://t.me/danumata_yamak_SL'),
                 InlineKeyboardButton('👨‍💻 CREATOR', url='https://t.me/BUDDY3_FF')
             ]
         ]         
@@ -68,10 +68,10 @@ async def callback_query(client: Client, query: CallbackQuery):
     elif query.data=="GROUP_CALLBACK":
         TELETIPS_GROUP_BUTTONS = [
             [
-                InlineKeyboardButton("MORE BOT", url="https://t.me/ak_program_1_bot")
+                InlineKeyboardButton("MORE BOT", url="@THA_MISS_LARA_BOT")
             ],
             [
-                InlineKeyboardButton("LIVE STREAM", url="https://t.me/aastrem")
+                InlineKeyboardButton(" »»දැනුමට යමක්««📚📖🖍", url="https://t.me/+ibhjytb8ODc5NGM1")
             ],
             [
                 InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
@@ -109,8 +109,8 @@ async def callback_query(client: Client, query: CallbackQuery):
             ],
             [
                 InlineKeyboardButton('👥 GROUP', callback_data="GROUP_CALLBACK"),
-                InlineKeyboardButton('📣 CHANNEL', url='https://t.me/pc1games12'),
-                InlineKeyboardButton('👨‍💻 CREATOR', url='https://t.me/BUDD3_FF')
+                InlineKeyboardButton('📣 CHANNEL', url='https://t.me/danumata_yamak_SL'),
+                InlineKeyboardButton('👨‍💻 CREATOR', url='https://t.me/BUDDY3_FF')
             ]
         ]
         reply_markup = InlineKeyboardMarkup(TELETIPS_START_BUTTONS)
